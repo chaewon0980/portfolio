@@ -6,19 +6,21 @@ import Resume from './routes/pages/Resume.tsx';
 import Works from './routes/pages/Works.tsx';
 import Contact from './routes/pages/Contact.tsx';
 
+const routes = [
+  { path: "/home", element: <Home /> },
+  { path: "/resume", element: <Resume /> },
+  { path: "/works", element: <Works /> },
+  { path: "/contact", element: <Contact /> }
+];
+
 function App() {
   return (
     <Router>
       <div className="App">
         <Routes>
-          {/* URL이 "/"일 때 Home 컴포넌트 */}
-          <Route path="/home" element={<Home />} />
-          {/* URL이 "/resume"일 때 Resume 컴포넌트 */}
-          <Route path="/resume" element={<Resume />} />
-          {/* URL이 "/works"일 때 Works 컴포넌트 */}
-          <Route path="/works" element={<Works />} />
-          {/* URL이 "/contact"일 때 Contact 컴포넌트 */}
-          <Route path="/contact" element={<Contact />} />
+          {routes.map((route, index) => (
+            <Route key={index} path={route.path} element={route.element} />
+          ))}
         </Routes>
       </div>
     </Router>
