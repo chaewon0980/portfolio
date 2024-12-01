@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx", // React 17 이상의 자동 JSX 변환 지원
+    "target": "ES6",    // ES6 문법 사용
+    "module": "ESNext", // ESNext 모듈 방식 사용
+    "strict": true,     // 엄격한 타입 검사
+    "moduleResolution": "Node",
+    "esModuleInterop": true
+  },
+  "include": ["src"],   // 컴파일할 파일 경로 지정
+  "exclude": ["node_modules"] // 제외할 디렉토리
+}
